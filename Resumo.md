@@ -781,7 +781,7 @@ public class MusicPlayer{
 </span>
 ```
 
-## 🌊 Carrinhos de Trem vs. Interfaces Fluentes 🌊
+## 🌊 Carrinhos de Trem vs. Interfaces Fluentes 
 
 Interfaces fluentes (`new Order().setCustomer("John").setShippingAddress(...)`) podem parecer carrinhos de trem, mas não expõem a estrutura interna do objeto, sendo compatíveis com a Lei de Demeter.
 
@@ -789,7 +789,7 @@ Interfaces fluentes (`new Order().setCustomer("John").setShippingAddress(...)`) 
 
 Objetos devem ser claramente definidos como manipuladores de dados (com comportamento) ou como simples contêineres de dados (POJOs). Evite objetos híbridos com comportamento significativo e dados públicos.
 
-## 📦 Objetos de Transferência de Dados (DTO) 📦
+## 📦 Objetos de Transferência de Dados (DTO) 
 
 DTOs são classes simples com apenas variáveis públicas (ou acesso via getters/setters) e sem lógica de negócios. São usados para transferir dados entre camadas de uma aplicação.
 
@@ -803,11 +803,11 @@ public record Pessoa(String nome, String cpf);
 
 Em vez de uma classe tradicional com getters e setters.
 
-## 💾 Active Record 💾
+## 💾 Active Record 
 
 Active Records são DTOs com métodos para persistência (como `save()` e `find()`). Regras de negócios não devem ser implementadas nesses objetos.
 
-## 💡 Outras Dicas 💡
+## 💡 Outras Dicas
 
 * **Maps vs. Arrays:** Use arrays para coleções ordenadas ou processadas como um todo. Use maps para buscas rápidas por chave-valor.
 * **Lists vs. Sets:** Use listas quando a ordem dos elementos importa e pode haver duplicados. Use sets quando a ordem não importa e não pode haver duplicados.
@@ -869,15 +869,15 @@ Active Records são DTOs com métodos para persistência (como `save()` e `find(
     </span>
 
 ---
-# ✨ Tópico 09 - Tratamento de Erros 🐞
+# ✨ Tópico 09 - Tratamento de Erros 
 
 Este tópico explora as melhores práticas para tratamento de erros em código limpo, conforme apresentado pelo Professor Ramon Venson.
 
-## 💥 O Que São Exceções? 🤔
+## 💥 O Que São Exceções? 
 
 Exceções são um mecanismo robusto para tratamento de erros, permitindo a recuperação de situações inesperadas no programa.
 
-## 🧱 Estrutura Básica de Tratamento de Exceções 🛠️
+## 🧱 Estrutura Básica de Tratamento de Exceções 
 
 A maioria das linguagens utiliza uma estrutura `try-catch-finally` para lidar com exceções:
 
@@ -896,15 +896,15 @@ finally {
 </span>
 ```
 
-## 🚀 Lançamento de Exceções 📤
+## 🚀 Lançamento de Exceções 
 
 Exceções são lançadas (`throw` ou `raise`) quando uma condição excepcional ocorre, sinalizando um problema que precisa ser tratado.
 
-## 💥 Let It Crash: Uma Filosofia Alternativa 💥
+## 💥 Let It Crash: Uma Filosofia Alternativa 
 
 Linguagens como Elixir e Erlang adotam a filosofia "Let It Crash", onde programas devem falhar de forma rápida e explícita, facilitando a recuperação por um supervisor em vez de tentar tratar erros pontualmente.
 
-## 📜 Sumário do Livro "Clean Code" sobre Tratamento de Erros 📜
+## 📜 Sumário do Livro "Clean Code" sobre Tratamento de Erros 
 
 * Use exceções em vez de códigos de erro.
 * Crie primeiro o bloco `try-catch-finally`.
@@ -914,7 +914,7 @@ Linguagens como Elixir e Erlang adotam a filosofia "Let It Crash", onde programa
 * Não retorne `null`.
 * Não passe `null` como argumento.
 
-## 🚫 Use Exceções em Vez de Códigos de Erro 🚫
+## 🚫 Use Exceções em Vez de Códigos de Erro
 
 Retornar códigos de erro dificulta a leitura e manutenção do código, obrigando o chamador a verificar o código de retorno após cada função. Exceções permitem um tratamento de erros mais claro e imediato.
 
@@ -965,11 +965,11 @@ int main() {
 </span>
 ```
 
-## 🏗️ Crie Primeiro o Bloco `try-catch-finally` 🏗️
+## 🏗️ Crie Primeiro o Bloco `try-catch-finally` 
 
 Ao escrever código que pode lançar exceções, defina a estrutura de tratamento de erros (`try-catch-finally`) no início. Isso ajuda a esclarecer o escopo da operação e como os erros serão tratados, garantindo que o programa termine em um estado consistente (usando o bloco `finally`).
 
-## ⚠️ Use Exceções Não Verificadas ⚠️
+## ⚠️ Use Exceções Não Verificadas 
 
 Em linguagens como Java, exceções verificadas (que devem ser explicitamente tratadas ou declaradas) podem levar a um acoplamento excessivo. Exceções não verificadas (como `NullPointerException`) oferecem mais flexibilidade. Se uma exceção verificada for lançada em um nível profundo da chamada de pilha, ela pode exigir declarações `throws` em várias camadas intermediárias.
 
@@ -1001,11 +1001,11 @@ public class MissaoRebelde {
 </span>
 ```
 
-## 💬 Forneça Contexto ℹ️
+## 💬 Forneça Contexto 
 
 As mensagens de exceção devem ser informativas, fornecendo detalhes sobre o que estava acontecendo, onde ocorreu o erro e qual foi a causa.
 
-## 🛣️ Defina o Fluxo Normal 🛤️
+## 🛣️ Defina o Fluxo Normal 
 
 Separe a lógica de negócios do tratamento de exceções para manter o código principal claro. Use objetos de exceção para lidar com casos excepcionais.
 
@@ -1055,15 +1055,15 @@ private void validateOrder(Order order) {
 ```
 
 
-## 🚫 Não Retorne `null` 🚫
+## 🚫 Não Retorne `null` 
 
 Retornar `null` obriga os clientes a verificar explicitamente por valores nulos, levando a possíveis `NullPointerException`. Prefira lançar exceções ou usar o padrão Null Object ou Optional.
 
-## 🚫 Não Passe `null` 🚫
+## 🚫 Não Passe `null` 
 
 Passar `null` como argumento também é perigoso. Trate casos de parâmetros nulos lançando exceções ou usando `Optional`.
 
-## 💡 Outras Dicas 💡
+## 💡 Outras Dicas 
 
 * **Padrão Objeto Nulo (Null Object Pattern):** Crie objetos substitutos que fornecem comportamento padrão em vez de `null`.
     * **Exemplo:** Em vez de retornar `null` para um cliente inexistente, retorne uma instância de `NullCliente` com valores padrão vazios.
