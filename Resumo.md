@@ -1,6 +1,5 @@
 # 🧹🖥️ Introdução ao Código Limpo 
 
-Este resumo aborda os principais pontos da apresentação sobre a introdução ao Clean Code, ministrada pelo Professor Ramon Venson na SATC em 2025.
 
 ## 💾 A Crise do Software 
 
@@ -118,7 +117,6 @@ Algumas barreiras podem dificultar a adoção de Clean Code:
 ---
 # ✨ Tópico 02 - Convenções e Nomenclaturas 
 
-Este resumo detalha as convenções e a importância da escolha de bons nomes no Clean Code, com base na apresentação do Professor Ramon Venson na SATC em 2025.
 
 ## 🏷️ Nomenclaturas: A Base da Compreensão 
 
@@ -226,7 +224,6 @@ def disable_user(user_id):  # Desabilita temporariamente
 ---
 # ✨ Tópico 03 - Convenções de Nomes 
 
-Este tópico aborda as convenções de nomes utilizadas em programação para promover a consistência e a legibilidade do código.
 
 ## 🏷️ O Que São Naming Conventions?
 
@@ -267,8 +264,6 @@ A tabela a seguir resume onde cada convenção é comumente utilizada:
 
 ---
 # ✨ Tópico 04 - Funções 
-
-Este tópico aborda as diretrizes para escrever funções limpas e eficientes, conforme apresentado pelo Professor Ramon Venson.
 
 ## ⚙️ O Que São Funções? 
 
@@ -314,8 +309,6 @@ Código duplicado dificulta a manutenção. Generalize funções semelhantes par
 
 ---
 # ✨ Tópico 05 - Comentários 
-
-Este tópico discute o uso de comentários no código, enfatizando que um código limpo geralmente requer menos comentários, conforme apresentado pelo Professor Ramon Venson.
 
 ## 📝 A Natureza dos Comentários 
 
@@ -470,8 +463,6 @@ Informações como autor, data de criação/atualização e linhas editadas são
 
 ---
 # ✨ Tópico 06 - Estrutura e Formatação 
-
-Este tópico aborda a importância da estrutura e formatação do código para clareza e manutenibilidade, conforme apresentado pelo Professor Ramon Venson.
 
 ## 🎯 Objetivo da Formatação 
 
@@ -650,8 +641,6 @@ Equipes devem definir e seguir um padrão de formatação consistente para garan
 
 ---
 # ✨ Tópico 07 - Linters 
-
-Este tópico aborda a utilização de Linters para garantir a consistência e qualidade do código, conforme apresentado pelo Professor Ramon Venson.
 
 ## ✍️ Estilo e Documentação 
 
@@ -870,8 +859,6 @@ Active Records são DTOs com métodos para persistência (como `save()` e `find(
 
 ---
 # ✨ Tópico 09 - Tratamento de Erros 
-
-Este tópico explora as melhores práticas para tratamento de erros em código limpo, conforme apresentado pelo Professor Ramon Venson.
 
 ## 💥 O Que São Exceções? 
 
